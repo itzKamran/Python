@@ -1,0 +1,18 @@
+# Original list
+numbers = [10, 15, 22, 33, 40, 55, 60]
+
+# Empty sublists
+even_list = []
+odd_list = []
+
+# Checking numbers
+for num in numbers:
+    if num % 2 == 0:
+        even_list.append(num)
+    else:
+        odd_list.append(num)
+
+# Output
+print("Original List:", numbers)
+print("Even Numbers:", even_list)
+print("Odd Numbers:", odd_list)
