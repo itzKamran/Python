@@ -1,0 +1,46 @@
+def main():
+    print("=== Continuous Calculator ===")
+    
+    try:
+        # Sabse pehle user se pehla number lenge
+        total = float(input("Enter A First Number : "))
+    except ValueError:
+        print("Wrong Input ! Program stop .")
+        return
+
+    while True:
+        print(f"\nCurrent Total: {total}")
+        print("Choices: + , - , * , / , = (Result & Exit)")
+        op = input("Choose Operation: ").strip()
+
+        # Agar user '=' dabaye toh final result dikha kar loop khatam
+        if op == "=":
+            print(f"\nFinal Result: {total}")
+            print("Calculator stop. Goodbye!")
+            break
+
+        # Agar sahi operator hai, toh agla number pucho
+        if op in ["+", "-", "*", "/"]:
+            try:
+                next_num = float(input("Enter A Next Number: "))
+            except ValueError:
+                print("Wrong ! Try it One times")
+                continue
+
+            # Purane total ke sath naye number ko calculate karna
+            if op == "+":
+                total += next_num
+            elif op == "-":
+                total -= next_num
+            elif op == "*":
+                total *= next_num
+            elif op == "/":
+                if next_num == 0:
+                    print("Erro: Division Zero !")
+                else:
+                    total /= next_num
+        else:
+            print("Wrong Operator Choose +, -, *, / ya = Enter.")
+
+# Program Execute
+main()
